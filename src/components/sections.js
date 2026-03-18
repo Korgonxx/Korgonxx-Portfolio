@@ -1,3 +1,12 @@
+import {
+  Handshake, Shield, PenLine,
+  Users, Mic2, Globe,
+  MessageSquare, Twitter, Send,
+  FileText, Palette, LayoutGrid,
+  AlignLeft, Map, Megaphone,
+  ArrowUpRight
+} from 'lucide-react'
+
 /* ━━ All section components ━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 /* ─── HERO ──────────────────────────────────────────── */
@@ -38,9 +47,9 @@ export function Hero() {
 /* ─── ROLES ─────────────────────────────────────────── */
 export function Roles() {
   const roles = [
-    { num:'01', icon:'🤝', title:'Ambassador', desc:'I represent Web3 projects I believe in — bridging teams with their communities across Asia and worldwide. Building trust, not just reach.' },
-    { num:'02', icon:'🛡️', title:'Moderator',  desc:'Hosting events, guiding newcomers, keeping communities safe from bad actors. I create environments where real engagement thrives.' },
-    { num:'03', icon:'✍️', title:'Content Creator', desc:'Turning complex blockchain ideas into clear, shareable threads and guides. Making Web3 concepts accessible to every level of user.' },
+    { num:'01', Icon: Handshake, title:'Ambassador',      desc:'I represent Web3 projects I believe in — bridging teams with their communities across Asia and worldwide. Building trust, not just reach.' },
+    { num:'02', Icon: Shield,    title:'Moderator',       desc:'Hosting events, guiding newcomers, keeping communities safe from bad actors. I create environments where real engagement thrives.' },
+    { num:'03', Icon: PenLine,   title:'Content Creator', desc:'Turning complex blockchain ideas into clear, shareable threads and guides. Making Web3 concepts accessible to every level of user.' },
   ]
   return (
     <section id="roles" className="sec">
@@ -52,7 +61,7 @@ export function Roles() {
         {roles.map((r, i) => (
           <div key={r.num} className={`role-card rv d${i+1}`}>
             <span className="rc-num">{r.num} //</span>
-            <span className="rc-icon">{r.icon}</span>
+            <span className="rc-icon"><r.Icon size={22} strokeWidth={1.5} /></span>
             <div className="rc-title">{r.title}</div>
             <div className="rc-desc">{r.desc}</div>
           </div>
@@ -65,11 +74,11 @@ export function Roles() {
 /* ─── PORTFOLIO ─────────────────────────────────────── */
 export function Portfolio() {
   const projects = [
-    { idx:'01', name:'Movement Labs', role:'Pathfinder Specialist', desc:'Onboarding new members, running community calls, and helping builders navigate the Movement Labs ecosystem across Asia.', year:'2024–2025', featured:true },
-    { idx:'02', name:'Movernance',    role:'Moderator & Event Host', desc:'Kept the community safe from scammers, hosted Rumble Nights twice weekly, and drove genuine engagement across the server.', year:'2024–2025' },
+    { idx:'01', name:'Movement Labs', role:'Pathfinder Specialist',       desc:'Onboarding new members, running community calls, and helping builders navigate the Movement Labs ecosystem across Asia.', year:'2024–2025', featured:true },
+    { idx:'02', name:'Movernance',    role:'Moderator & Event Host',      desc:'Kept the community safe from scammers, hosted Rumble Nights twice weekly, and drove genuine engagement across the server.', year:'2024–2025' },
     { idx:'03', name:'Irys',          role:'Shihan · Ambassador · Creator', desc:'Achieved Shihan status. Created deep-dive content on programmable data, Matrix Packaging, and the IrysVM.', year:'2025' },
-    { idx:'04', name:'Hookt.app',     role:'Community Builder', desc:'Connected creators and sports fans in the Web3 space, driving community growth for this sports-meets-blockchain platform.', year:'2024' },
-    { idx:'05', name:'BRKT',          role:'Content Creator', desc:'Educational content, campaigns, and insights to help this blockchain-based prediction markets platform reach a wider audience.', year:'2024–2025' },
+    { idx:'04', name:'Hookt.app',     role:'Community Builder',           desc:'Connected creators and sports fans in the Web3 space, driving community growth for this sports-meets-blockchain platform.', year:'2024' },
+    { idx:'05', name:'BRKT',          role:'Content Creator',             desc:'Educational content, campaigns, and insights to help this blockchain-based prediction markets platform reach a wider audience.', year:'2024–2025' },
   ]
   return (
     <section id="portfolio" className="sec">
@@ -80,7 +89,7 @@ export function Portfolio() {
       <div className="proj-grid">
         {projects.map((p, i) => (
           <div key={p.idx} className={`proj-card rv d${(i%5)+1}${p.featured ? ' featured' : ''}`}>
-            <span className="arrow">↗</span>
+            <span className="arrow"><ArrowUpRight size={15} strokeWidth={1.75} /></span>
             <div>
               {p.featured && <div className="proj-feat-badge">Featured</div>}
               <div className="proj-idx">{p.idx}</div>
@@ -148,11 +157,11 @@ const TICKER = ['Community Onboarding','Event Hosting','Content Creation','Safet
 
 export function Services() {
   const svcs = [
-    { ico:'🤝', name:'Community\nOnboarding',     tip:'Onboarding' },
-    { ico:'🎙', name:'Event\nHosting',            tip:'Events' },
-    { ico:'✍️', name:'Content\nCreation',         tip:'Content' },
-    { ico:'🛡️', name:'Safety &\nModeration',      tip:'Moderation' },
-    { ico:'🌐', name:'Project\nRepresentation',   tip:'Representation' },
+    { Icon: Users,    name:'Community\nOnboarding',   tip:'Onboarding' },
+    { Icon: Mic2,     name:'Event\nHosting',          tip:'Events' },
+    { Icon: PenLine,  name:'Content\nCreation',       tip:'Content' },
+    { Icon: Shield,   name:'Safety &\nModeration',    tip:'Moderation' },
+    { Icon: Globe,    name:'Project\nRepresentation', tip:'Representation' },
   ]
   return (
     <section id="services" className="sec">
@@ -168,7 +177,7 @@ export function Services() {
       <div className="svc-grid rv">
         {svcs.map(s => (
           <div key={s.tip} className="svc" data-tip={s.tip}>
-            <span className="svc-ico">{s.ico}</span>
+            <span className="svc-ico"><s.Icon size={20} strokeWidth={1.5} /></span>
             <div className="svc-name" style={{ whiteSpace: 'pre-line' }}>{s.name}</div>
             <span className="svc-lv">LV.MAX</span>
           </div>
@@ -181,10 +190,10 @@ export function Services() {
 /* ─── EXPERIENCE ────────────────────────────────────── */
 export function Experience() {
   const xp = [
-    { org:'Movement Labs', yr:'2024–2025', role:'Pathfinder Specialist', desc:'Onboarding members, running community calls, helping builders navigate the Movement Labs network across Asia.', w:96 },
-    { org:'Movernance',    yr:'2024–2025', role:'Moderator & Event Host', desc:'Community safety, scam prevention, and hosting Rumble Nights twice a week to build strong server culture.', w:82 },
+    { org:'Movement Labs', yr:'2024–2025', role:'Pathfinder Specialist',       desc:'Onboarding members, running community calls, helping builders navigate the Movement Labs network across Asia.', w:96 },
+    { org:'Movernance',    yr:'2024–2025', role:'Moderator & Event Host',      desc:'Community safety, scam prevention, and hosting Rumble Nights twice a week to build strong server culture.', w:82 },
     { org:'Irys',          yr:'2025',      role:'Shihan · Ambassador · Creator', desc:'Guided members as Shihan. Deep-dive content on programmable data, Matrix Packaging, and the IrysVM.', w:90 },
-    { org:'BRKT',          yr:'2024–2025', role:'Content Creator', desc:'Educational campaigns and insights for this blockchain-based prediction markets platform.', w:75 },
+    { org:'BRKT',          yr:'2024–2025', role:'Content Creator',             desc:'Educational campaigns and insights for this blockchain-based prediction markets platform.', w:75 },
   ]
   return (
     <section id="experience" className="sec">
@@ -216,19 +225,20 @@ export function Experience() {
 /* ─── TOOLS ─────────────────────────────────────────── */
 export function Tools() {
   const tools = [
-    { icon:'💬', name:'Discord',          tag:'Community Hub',    w:98, items:['🏛 Movernance Server — hosted 100+ Rumble Night events','🚀 Movement Labs community onboarding flows','🛡 IRYS community moderation system'] },
-    { icon:'𝕏',  name:'Twitter / X',      tag:'Content & Reach',  w:92, items:['🧵 Deep-dive IRYS threads on IrysVM & Matrix Packaging','📢 BRKT campaign content & prediction market explainers','🌐 Movement Labs Pathfinder outreach threads'] },
-    { icon:'✈',  name:'Telegram',         tag:'Direct Engagement',w:88, items:['📣 Community announcements & raid coordination','🤝 Direct onboarding pipelines for new Web3 members','📋 Project update broadcasts for multiple guilds'] },
-    { icon:'📋', name:'Notion',           tag:'Organization',     w:82, items:['📁 Ambassador activity logs & weekly reports','🗓 Event planning & Rumble Night runbooks','📊 Community health dashboards for project teams'] },
-    { icon:'🎨', name:'Canva',            tag:'Visual Content',   w:80, items:['🖼 Campaign banners & announcement graphics','📱 Social media post templates for ambassador work','🎯 Event promo visuals for Discord & Twitter'] },
-    { icon:'📊', name:'Google Workspace', tag:'Docs & Sheets',    w:85, items:['📈 Community growth trackers & member analytics','📝 Content calendars for multi-project campaigns','🔗 Shared docs for cross-team ambassador coordination'] },
+    { Icon: MessageSquare, name:'Discord',          tag:'Community Hub',     w:98, items:['Movernance Server — 100+ Rumble Night events','Movement Labs community onboarding flows','IRYS community moderation system'] },
+    { Icon: Twitter,       name:'Twitter / X',      tag:'Content & Reach',   w:92, items:['Deep-dive IRYS threads on IrysVM & Matrix Packaging','BRKT campaign content & prediction market explainers','Movement Labs Pathfinder outreach threads'] },
+    { Icon: Send,          name:'Telegram',         tag:'Direct Engagement', w:88, items:['Community announcements & raid coordination','Direct onboarding pipelines for new Web3 members','Project update broadcasts for multiple guilds'] },
+    { Icon: FileText,      name:'Notion',           tag:'Organization',      w:82, items:['Ambassador activity logs & weekly reports','Event planning & Rumble Night runbooks','Community health dashboards for project teams'] },
+    { Icon: Palette,       name:'Canva',            tag:'Visual Content',    w:80, items:['Campaign banners & announcement graphics','Social media post templates for ambassador work','Event promo visuals for Discord & Twitter'] },
+    { Icon: LayoutGrid,    name:'Google Workspace', tag:'Docs & Sheets',     w:85, items:['Community growth trackers & member analytics','Content calendars for multi-project campaigns','Shared docs for cross-team ambassador coordination'] },
   ]
   const creations = [
-    { icon:'🧵', type:'Thread',            title:'IRYS IrysVM Deep-Dive',                desc:'A comprehensive educational Twitter thread breaking down IrysVM, Matrix Packaging, and programmable data.',         tool:'Twitter / X',    project:'Irys · 2025' },
-    { icon:'🎙', type:'Event Series',      title:'Rumble Nights',                        desc:'Bi-weekly Discord community events for Movernance — structured engagement sessions strengthening server culture.',   tool:'Discord',         project:'Movernance · 2024–25' },
-    { icon:'🗺', type:'Onboarding System', title:'Movement Labs Pathfinder Flow',        desc:'A complete onboarding pipeline from first contact to active builder through the Movement Labs ecosystem.',          tool:'Discord · Notion',project:'Movement Labs · 2024' },
-    { icon:'📢', type:'Campaign',          title:'BRKT Prediction Market Explainers',   desc:'Educational content series explaining blockchain-based prediction markets, driving sustainable audience growth.',    tool:'Twitter/X · Canva',project:'BRKT · 2024–25' },
+    { Icon: AlignLeft, type:'Thread',            title:'IRYS IrysVM Deep-Dive',              desc:'A comprehensive educational Twitter thread breaking down IrysVM, Matrix Packaging, and programmable data.',        tool:'Twitter / X',     project:'Irys · 2025' },
+    { Icon: Mic2,      type:'Event Series',      title:'Rumble Nights',                      desc:'Bi-weekly Discord community events for Movernance — structured engagement sessions strengthening server culture.',  tool:'Discord',          project:'Movernance · 2024–25' },
+    { Icon: Map,       type:'Onboarding System', title:'Movement Labs Pathfinder Flow',      desc:'A complete onboarding pipeline from first contact to active builder through the Movement Labs ecosystem.',         tool:'Discord · Notion', project:'Movement Labs · 2024' },
+    { Icon: Megaphone, type:'Campaign',          title:'BRKT Prediction Market Explainers', desc:'Educational content series explaining blockchain-based prediction markets, driving sustainable audience growth.',   tool:'Twitter/X · Canva',project:'BRKT · 2024–25' },
   ]
+
   return (
     <section id="tools" className="sec">
       <div className="sec-eyebrow rv">
@@ -236,21 +246,39 @@ export function Tools() {
       </div>
       <h2 className="sec-h rv d1">Tools I Use &amp;<br />What I Built</h2>
 
-      <div className="tools-grid rv d1">
-        {tools.map(t => (
-          <div key={t.name} className="tool-card" data-tip={t.name}>
-            <div className="tool-icon">{t.icon}</div>
-            <div className="tool-name">{t.name}</div>
-            <div className="tool-tag">{t.tag}</div>
-            <div className="tool-bar-wrap">
-              <div className="tool-bar" data-w={t.w} style={{ width: 0 }} />
+      {/* ── Tool rows ── */}
+      <div className="tools-list rv d1">
+        <div className="tl-header">
+          <div className="tl-col-a">Tool</div>
+          <div className="tl-col-b">Proficiency</div>
+          <div className="tl-col-c">Built with it</div>
+        </div>
+        {tools.map((t, i) => (
+          <div key={t.name} className="tl-row tool-card" data-tip={t.name}>
+            <div className="tl-left">
+              <span className="tl-idx">0{i + 1}</span>
+              <span className="tl-icon"><t.Icon size={16} strokeWidth={1.5} /></span>
+              <div className="tl-info">
+                <div className="tl-name">{t.name}</div>
+                <div className="tl-tag">{t.tag}</div>
+              </div>
             </div>
-            <div className="tool-proj-label">Built with it</div>
-            {t.items.map(item => <div key={item} className="tool-proj-item">{item}</div>)}
+            <div className="tl-mid">
+              <div className="tl-bar-wrap">
+                <div className="tl-bar" data-w={t.w} style={{ width: 0 }} />
+              </div>
+              <span className="tl-pct">{t.w}%</span>
+            </div>
+            <div className="tl-right">
+              {t.items.map(item => (
+                <div key={item} className="tl-item">{item}</div>
+              ))}
+            </div>
           </div>
         ))}
       </div>
 
+      {/* ── Notable Creations ── */}
       <div className="rv d2">
         <div className="creations-header">
           <span className="creations-label">// Notable Creations</span>
@@ -258,9 +286,9 @@ export function Tools() {
         </div>
         <div className="creations-grid">
           {creations.map((c, i) => (
-            <div key={c.title} className={`creation-card rv d${i+1}`}>
+            <div key={c.title} className={`creation-card rv d${i + 1}`} data-num={`0${i + 1}`}>
               <div className="cc-top">
-                <span className="cc-icon">{c.icon}</span>
+                <span className="cc-icon"><c.Icon size={18} strokeWidth={1.5} /></span>
                 <span className="cc-type">{c.type}</span>
               </div>
               <div className="cc-title">{c.title}</div>
@@ -292,7 +320,8 @@ export function Contact() {
           Whether you&#39;re launching a new project or scaling an existing one — I bring structure, consistency, and energy your community needs to thrive.
         </p>
         <a href="mailto:contact@korgonxx.com" className="big-cta" data-tip="Send Email">
-          Get in Touch →
+          Get in Touch
+          <ArrowUpRight size={15} strokeWidth={2} />
         </a>
       </div>
       <div className="contact-r rv d2">
@@ -301,17 +330,17 @@ export function Contact() {
         </div>
         <div className="social-links">
           {[
-            { href:'https://x.com/Korgonxx',                           ico:'𝕏',  name:'Twitter / X', handle:'@Korgonxx' },
-            { href:'https://discordapp.com/users/1083960851884683405', ico:'💬', name:'Discord',     handle:'Korgonxx' },
-            { href:'https://t.me/itxx_happy',                          ico:'✈',  name:'Telegram',    handle:'@itxx_happy' },
+            { href:'https://x.com/Korgonxx',                           Icon: Twitter,       name:'Twitter / X', handle:'@Korgonxx' },
+            { href:'https://discordapp.com/users/1083960851884683405', Icon: MessageSquare, name:'Discord',     handle:'Korgonxx' },
+            { href:'https://t.me/itxx_happy',                          Icon: Send,          name:'Telegram',    handle:'@itxx_happy' },
           ].map(s => (
             <a key={s.name} href={s.href} target="_blank" rel="noreferrer" className="social-link">
-              <div className="sl-ico">{s.ico}</div>
+              <div className="sl-ico"><s.Icon size={17} strokeWidth={1.75} /></div>
               <div>
                 <div className="sl-name">{s.name}</div>
                 <div className="sl-handle">{s.handle}</div>
               </div>
-              <div className="sl-arr">↗</div>
+              <div className="sl-arr"><ArrowUpRight size={14} strokeWidth={1.75} /></div>
             </a>
           ))}
         </div>
