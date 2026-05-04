@@ -1,9 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Standard Next.js build (Vercel auto-detects)
-  // No custom output — let Vercel handle build optimization
+  output: 'standalone',  // Vercel-optimized build output
   reactStrictMode: true,
   swcMinify: true,
+  // Exclude p5 from bundling since we load via CDN
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      }
+    }
+    return config
+  },
 }
 
 module.exports = nextConfig
