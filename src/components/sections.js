@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import KineticText from './KineticText'
 import HeroBackground from './HeroBackground'
 import {
@@ -19,6 +20,33 @@ export function Hero() {
     { count: 100, label: 'Events Hosted' },
     { count: 99,  label: 'Server Safety %' },
   ]
+  // Count-up animation for metrics
+  useEffect(() => {
+    const els = document.querySelectorAll('.hm-val')
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target
+            const target = parseInt(el.getAttribute('data-count'), 10)
+            const duration = 2000
+            const startTime = performance.now()
+            const easeOut = t => 1 - Math.pow(1 - t, 3)
+            const animate = (now) => {
+              const progress = Math.min((now - startTime) / duration, 1)
+              el.textContent = Math.floor(easeOut(progress) * target)
+              if (progress < 1) requestAnimationFrame(animate)
+            }
+            requestAnimationFrame(animate)
+            observer.unobserve(el)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+    els.forEach(el => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
   return (
     <section id="hero" className="hero">
       <div className="hero-bg"><HeroBackground /></div>
