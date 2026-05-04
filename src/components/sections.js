@@ -1,4 +1,3 @@
-import Hero from './Hero'
 import KineticText from './KineticText'
 import {
   Handshake, Shield, PenLine,
