@@ -1,4 +1,5 @@
 import KineticText from './KineticText'
+import HeroBackground from './HeroBackground'
 import {
   Handshake, Shield, PenLine,
   Users, Mic2, Globe,
