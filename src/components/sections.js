@@ -1,4 +1,5 @@
 import Hero from './Hero'
+import KineticText from './KineticText'
 import {
   Handshake, Shield, PenLine,
   Users, Mic2, Globe,
@@ -22,7 +23,7 @@ export function Hero() {
     <section id="hero" className="hero">
       <div className="hero-bg"><HeroBackground /></div>
       <p className="hero-kicker">Web3 Community Builder · Asia-Based</p>
-      <h1 className="hero-name">KORGONXX</h1>
+      <KineticText text="KORGONXX" className="hero-name" tag="h1" stagger={0.08} delay={0.6} />
       <div className="hero-name-ghost" aria-hidden="true">KORGONXX</div>
       <p className="hero-desc">
         Helping Web3 projects grow by connecting, educating, and empowering communities across Asia and worldwide. Ambassador, Moderator, Content Creator.
@@ -58,7 +59,7 @@ export function Roles() {
       <div className="sec-eyebrow rv">
         <span className="sec-num">01</span><div className="sec-line" /><span className="sec-tag">What I Do</span>
       </div>
-      <h2 className="sec-h rv d1">Three Ways I Build Communities</h2>
+      <KineticText text="Three Ways I Build Communities" className="sec-h" stagger={0.05} delay={0.8} wave={false} />
       <div className="role-grid">
         {roles.map((r, i) => (
           <div key={r.num} className={`role-card rv d${i+1}`}>
@@ -87,7 +88,7 @@ export function Portfolio() {
       <div className="sec-eyebrow rv">
         <span className="sec-num">02</span><div className="sec-line" /><span className="sec-tag">2023–2025</span>
       </div>
-      <h2 className="sec-h rv d1">Selected Projects</h2>
+      <KineticText text="Selected Projects" className="sec-h" stagger={0.05} delay={0.8} wave={false} />
       <div className="proj-grid">
         {projects.map((p, i) => (
           <div key={p.idx} className={`proj-card rv d${(i%5)+1}${p.featured ? ' featured' : ''}`}>
