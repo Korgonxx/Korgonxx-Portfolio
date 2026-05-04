@@ -357,13 +357,12 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="ascii-banner" style={{textAlign:'center', marginBottom:'16px'}}>
-        <pre style={{fontFamily:'JetBrains Mono, monospace', fontSize:'10px', lineHeight:1.2, color:'var(--neon)', opacity:0.7}}>
+        <pre style={{fontFamily:'JetBrains Mono, monospace', fontSize:'10px', lineHeight:1.2, color:'var(--neon)', opacity:0.7}}>{`
  __ ______  ____  ______
-   / //_/ __ \\/ __ \\/ ____/
+   / //_/ __ \/ __ \/ ____/
   / ,< / / / / /_/ / / __  
  / /| / /_/ / _, _/ /_/ /  
-/_/ |_\\____/_/ |_|\\____/  
-        </pre>
+/_/ |_\\____/_/ |_|\\____/  `}</pre>
       </div>
       <div className="ft-l">Korgonxx</div>
       <div className="ft-c">© 2025 Korgonxx · Haryana, India</div>
