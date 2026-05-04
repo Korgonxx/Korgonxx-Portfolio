@@ -60,3 +60,5 @@ korgonxx-portfolio/
 - **Plain CSS** (no Tailwind — clean, fast, zero runtime overhead)
 - **Syne** display font + **JetBrains Mono** for labels
 - Static export (`output: 'export'`) — works on any host
+
+<!-- build trigger: 1777932722 -->
