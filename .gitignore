@@ -3,3 +3,5 @@ node_modules
 .env*.local
 # Vercel build artifacts
 .vercel/output
+
+.next/

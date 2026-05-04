@@ -24,7 +24,13 @@
   --top-h:  56px;
   --ease:   cubic-bezier(.4, 0, .2, 1);
 
-  /* keep PNG cursor vars (files stay in /public/cursors/) */
+  /* Vercel design tokens */
+  --v-badge-bg:     #ebf5ff;
+  --v-badge-text:   #0068d6;
+  --v-text-muted:   #4d4d4d;
+  --tracking-subhead: -1.28px;
+
+  /* keep PNG cursor vars */
   --cur-default:  url('/cursors/default.png')  6  4,  auto;
   --cur-pointer:  url('/cursors/pointer.png')  14 4,  pointer;
   --cur-grab:     url('/cursors/grab.png')     16 8,  grab;
