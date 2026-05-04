@@ -18,6 +18,7 @@ import ClientShell from '@/components/ClientShell'
 export default function Home() {
   return (
     <ClientShell>
+        {/* DEPLOY: 8a4ad0f */}
       <Topbar />
       <div className="xp-prog"><div className="xp-fill" id="xp-fill" /></div>
       <Sidebar />
