@@ -3,8 +3,6 @@
 import { useEffect, useRef, useState } from 'react'
 
 // Pretext for text measurement
-import { prepareWithSegments, layoutWithLines } from '@chenglou/pretext'
-
 // Uses Intl.Segmenter to split text into visible glyphs (emoji, CJK safe)
 function segmentText(text) {
   const seg = new Intl.Segmenter(undefined, { granularity: 'grapheme' })
