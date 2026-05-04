@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section id="hero" className="hero">
       <div className="hero-bg"><HeroBackground /></div>
-      <p className="hero-kicker">Web3 Community Builder · Asia-Based</p>
+      <p className="hero-kicker">🚀 TEST DEPLOY — 1777931450</p>
       <KineticText text="KORGONXX" className="hero-name" tag="h1" stagger={0.08} delay={0.6} />
       <div className="hero-name-ghost" aria-hidden="true">KORGONXX</div>
       <p className="hero-desc">
