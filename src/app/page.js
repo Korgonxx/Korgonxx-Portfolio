@@ -3,6 +3,7 @@
 import Topbar      from '@/components/Topbar'
 import Sidebar     from '@/components/Sidebar'
 import Hero        from '@/components/Hero'
+import HeroBackground from '@/components/HeroBackground'
 import Roles       from '@/components/Roles'
 import Portfolio   from '@/components/Portfolio'
 import About       from '@/components/About'
@@ -22,7 +23,7 @@ export default function Home() {
       <div className="overlay" id="overlay" />
       <div className="tip" id="tip" />
       <div className="main" id="main">
-        <Hero />
+        <><HeroBackground /><Hero />
         <Roles />
         <Portfolio />
         <About />

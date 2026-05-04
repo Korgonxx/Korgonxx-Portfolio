@@ -1,3 +1,4 @@
+import Hero from './Hero'
 import {
   Handshake, Shield, PenLine,
   Users, Mic2, Globe,
@@ -19,6 +20,7 @@ export function Hero() {
   ]
   return (
     <section id="hero" className="hero">
+      <div className="hero-bg"><HeroBackground /></div>
       <p className="hero-kicker">Web3 Community Builder · Asia-Based</p>
       <h1 className="hero-name">KORGONXX</h1>
       <div className="hero-name-ghost" aria-hidden="true">KORGONXX</div>
@@ -359,3 +361,4 @@ export function Footer() {
     </footer>
   )
 }
+export { HeroBackground } from './HeroBackground'
