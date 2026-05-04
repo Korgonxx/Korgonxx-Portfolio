@@ -22,7 +22,6 @@ export function Hero() {
   return (
     <section id="hero" className="hero">
       <div className="hero-bg"><HeroBackground /></div>
-      <p className="hero-kicker">🚀 TEST DEPLOY — 1777931450</p>
       <KineticText text="KORGONXX" className="hero-name" tag="h1" stagger={0.08} delay={0.6} />
       <div className="hero-name-ghost" aria-hidden="true">KORGONXX</div>
       <p className="hero-desc">
@@ -109,6 +108,35 @@ export function Portfolio() {
     </section>
   )
 }
+
+
+
+/* ─── WORKFLOW ─────────────────────────────────────────── */
+export function Workflow() {
+  const steps = [
+    { num:'01', title:'Develop', desc:'Local iteration with hot reload. Write code, see changes instantly.' },
+    { num:'02', title:'Preview', desc:'Push to GitHub, Vercel builds automatically. Share preview URLs with stakeholders.' },
+    { num:'03', title:'Ship', desc:'Merge to main, production deploys globally with zero-downtime.' },
+  ]
+  return (
+    <section id="workflow" className="sec">
+      <div className="sec-eyebrow rv">
+        <span className="sec-num">03</span><div className="sec-line" /><span className="sec-tag">Process</span>
+      </div>
+      <KineticText text="Deploy Seamlessly" className="sec-h" stagger={0.05} delay={0.8} wave={false} />
+      <div className="workflow-grid">
+        {steps.map((s, i) => (
+          <div key={s.num} className={`workflow-step rv d${i+1}`}>
+            <div className="wf-num">{s.num}</div>
+            <div className="wf-title">{s.title}</div>
+            <div className="wf-desc">{s.desc}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 
 /* ─── ABOUT ─────────────────────────────────────────── */
 export function About() {
