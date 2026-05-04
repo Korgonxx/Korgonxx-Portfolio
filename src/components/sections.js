@@ -370,4 +370,4 @@ export function Footer() {
     </footer>
   )
 }
-export { HeroBackground } from './HeroBackground'
+export { default as HeroBackground } from './HeroBackground'
