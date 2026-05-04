@@ -31,6 +31,7 @@ export default function Home() {
         <Experience />
         <Tools />
         <Contact />
+        </>
       </div>
       <Footer />
     </ClientShell>
