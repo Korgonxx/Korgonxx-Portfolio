@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',   // enables `next build` → static HTML export (works on any host)
-  trailingSlash: true,
-  images: { unoptimized: true },
+  // Standard Next.js build (Vercel auto-detects)
+  // No custom output — let Vercel handle build optimization
+  reactStrictMode: true,
+  swcMinify: true,
 }
 
 module.exports = nextConfig
