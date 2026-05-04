@@ -65,7 +65,7 @@ export function Roles() {
           <div key={r.num} className={`role-card rv d${i+1}`}>
             <span className="rc-num">{r.num} //</span>
             <span className="rc-icon"><r.Icon size={22} strokeWidth={1.5} /></span>
-            <div className="rc-title">{r.title}</div>
+            <div className="rc-title"><span className="type">{r.title.split(" / ")[0]}</span></div>
             <div className="rc-desc">{r.desc}</div>
           </div>
         ))}
