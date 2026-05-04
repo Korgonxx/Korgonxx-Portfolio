@@ -129,9 +129,9 @@ export function About() {
       <div className="about-inner">
         <div className="rv d1">
           <p className="about-body">
-            Hi — I&#39;m Korgonxx. An Asia-based Web3 community builder, moderator, and ambassador from Haryana, India. I&#39;ve spent the last 5+ years helping decentralized projects grow by uniting people, simplifying ideas through content, and building safe, thriving communities.
+            I'm Korgonxx — a Web3 community builder and moderator based out of Haryana, India. The last five years have been all about helping decentralized projects grow, mostly by bringing people together, writing clear content, and keeping communities safe and active.
             <br /><br />
-            I work with founders who want more than follower counts — they want real, engaged communities that understand the product and stick around.
+            I particularly enjoy working with founders who care more about genuine engagement than vanity metrics. If you're building something and want people who actually stick around, let's talk.
           </p>
           <a href="https://x.com/Korgonxx" target="_blank" rel="noreferrer" className="about-link" data-tip="Twitter / X">
             Follow on X / Twitter →
