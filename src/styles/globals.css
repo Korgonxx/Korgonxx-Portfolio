@@ -748,3 +748,55 @@ section { position:relative; z-index:1; }
   *,html,body { cursor:auto !important; }
   a,button,[role="button"] { cursor:pointer !important; }
 }
+
+/* Role pill badge – Vercel-inspired */
+
+
+/* Pill badges – Vercel-style */
+.tl-tag, .proj-feat-badge, .sec-tag {
+  display: inline-block;
+  background: var(--v-badge-bg);
+  color: var(--v-badge-text);
+  padding: 0px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  box-shadow: none;
+}
+.proj-feat-badge {
+  font-size: 0.7rem;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.sec-tag {
+  font-size: 0.75rem;
+  color: var(--v-text-muted);
+  background: linear-gradient(90deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+/* Tighten heading letter-spacing to match Vercel compression */
+.sec-h, .hero-name, .proj-name, .xp-org, .tl-name {
+  letter-spacing: var(--tracking-subhead);
+}
+
+.role-card .type {  display: inline-block;
+  background: var(--v-badge-bg);
+  color: var(--v-badge-text);
+  padding: 0px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  box-shadow: none;
+  transition: transform 0.2s ease;
+}
+
+.role-card:hover .type {
+  transform: scale(1.04);
+}
